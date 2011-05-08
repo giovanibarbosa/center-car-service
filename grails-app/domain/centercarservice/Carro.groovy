@@ -1,5 +1,0 @@
-package centercarservice
-
-class Carro {
-
-}
