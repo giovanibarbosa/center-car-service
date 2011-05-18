@@ -24,17 +24,15 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'cliente.id.label', default: 'Id')}" />
                         
+                            <g:sortableColumn property="nome" title="${message(code: 'cliente.nome.label', default: 'Nome')}" />
+                        
                             <g:sortableColumn property="cpf" title="${message(code: 'cliente.cpf.label', default: 'Cpf')}" />
+                        
+                            <g:sortableColumn property="rg" title="${message(code: 'cliente.rg.label', default: 'Rg')}" />
                         
                             <g:sortableColumn property="dataDeNascimento" title="${message(code: 'cliente.dataDeNascimento.label', default: 'Data De Nascimento')}" />
                         
-                            <th><g:message code="cliente.endereco.label" default="Endereco" /></th>
-                        
-                            <g:sortableColumn property="nome" title="${message(code: 'cliente.nome.label', default: 'Nome')}" />
-                        
-                            <g:sortableColumn property="rg" title="${message(code: 'cliente.rg.label', default: 'Rg')}" />
-                            
-                            <g:sortableColumn property="telefone" title="${message(code: 'cliente.rg.label', default: 'telefone')}" />
+                            <g:sortableColumn property="telefone" title="${message(code: 'cliente.telefone.label', default: 'Telefone')}" />
                         
                         </tr>
                     </thead>
@@ -44,16 +42,14 @@
                         
                             <td><g:link action="show" id="${clienteInstance.id}">${fieldValue(bean: clienteInstance, field: "id")}</g:link></td>
                         
+                            <td>${fieldValue(bean: clienteInstance, field: "nome")}</td>
+                        
                             <td>${fieldValue(bean: clienteInstance, field: "cpf")}</td>
+                        
+                            <td>${fieldValue(bean: clienteInstance, field: "rg")}</td>
                         
                             <td><g:formatDate date="${clienteInstance.dataDeNascimento}" /></td>
                         
-                            <td>${fieldValue(bean: clienteInstance, field: "endereco")}</td>
-                        
-                            <td>${fieldValue(bean: clienteInstance, field: "nome")}</td>
-                        
-                            <td>${fieldValue(bean: clienteInstance, field: "rg")}</td>
-                            
                             <td>${fieldValue(bean: clienteInstance, field: "telefone")}</td>
                         
                         </tr>
