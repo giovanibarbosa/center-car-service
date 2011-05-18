@@ -94,6 +94,7 @@
                     <!--<p><a href="http://localhost:8080/CenterCarService/cliente">Gerenciar Clientes</a></p>
                     <p><a href="http://localhost:8080/CenterCarService/produto">Gerenciar Estoque de Produtos</a></p>
                     <p><a href="http://localhost:8080/CenterCarService/venda">Gerenciar Vendas</a></p>-->
+                    <p><a href="http://localhost:8080/CenterCarService/estoque/index">Gerenciar Estoque</a></p>
                     
                 </ul>
             </div>
