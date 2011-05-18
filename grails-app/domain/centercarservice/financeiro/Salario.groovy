@@ -4,7 +4,7 @@ import centercarservice.cadastro.Funcionario;
 
 class Salario {
 	Date dataDeVencimento, dataDePagamento
-	double valorBase, valorComissionado
+	BigDecimal valorBase, valorComissionado
 	boolean pago
 	
 	static belongsTo = [funcionario:Funcionario]
