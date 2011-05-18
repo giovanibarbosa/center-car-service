@@ -1,6 +1,7 @@
 package centercarservice.financeiro
 
 import centercarservice.cadastro.*;
+import centercarservice.estoque.*;
 
 class Venda {
 	
