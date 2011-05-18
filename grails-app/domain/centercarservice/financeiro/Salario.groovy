@@ -11,7 +11,7 @@ class Salario {
 	
     static constraints = {
 		valorBase(min:0.0)
-		//valorComissionado(validator:{return it >= valorBase})
+		valorComissionado(display:false)
 		dataDeVencimento()
 		dataDePagamento()
 		pago()		
