@@ -1,10 +1,10 @@
 
-<%@ page import="centercarservice.estoque.Produto" %>
+<%@ page import="centercarservice.financeiro.Caixa" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'produto.label', default: 'Produto')}" />
+        <g:set var="entityName" value="${message(code: 'caixa.label', default: 'Caixa')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -23,79 +23,72 @@
                     <tbody>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.id.label" default="Id" /></td>
+                            <td valign="top" class="name"><g:message code="caixa.id.label" default="Id" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: produtoInstance, field: "id")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.referencia.label" default="Referencia" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: produtoInstance, field: "referencia")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "id")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.descricao.label" default="Descricao" /></td>
+                            <td valign="top" class="name"><g:message code="caixa.contasAPagar.label" default="Contas AP agar" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: produtoInstance, field: "descricao")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.precoDeVenda.label" default="Preco De Venda" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: produtoInstance, field: "precoDeVenda")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "contasAPagar")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.dataDaCompra.label" default="Data Da Compra" /></td>
+                            <td valign="top" class="name"><g:message code="caixa.contasAReceber.label" default="Contas AR eceber" /></td>
                             
-                            <td valign="top" class="value"><g:formatDate date="${produtoInstance?.dataDaCompra}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.dataDePagamento.label" default="Data De Pagamento" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${produtoInstance?.dataDePagamento}" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "contasAReceber")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.dataDeVencimento.label" default="Data De Vencimento" /></td>
+                            <td valign="top" class="name"><g:message code="caixa.totalAReceberEmServicos.label" default="Total AR eceber Em Servicos" /></td>
                             
-                            <td valign="top" class="value"><g:formatDate date="${produtoInstance?.dataDeVencimento}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.garantia.label" default="Garantia" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${produtoInstance?.garantia}" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "totalAReceberEmServicos")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.lucro.label" default="Lucro" /></td>
+                            <td valign="top" class="name"><g:message code="caixa.totalAReceberEmVendas.label" default="Total AR eceber Em Vendas" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: produtoInstance, field: "lucro")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "totalAReceberEmVendas")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.quitado.label" default="Quitado" /></td>
+                            <td valign="top" class="name"><g:message code="caixa.totalEmServicos.label" default="Total Em Servicos" /></td>
                             
-                            <td valign="top" class="value"><g:formatBoolean boolean="${produtoInstance?.quitado}" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "totalEmServicos")}</td>
                             
                         </tr>
-                        
+                    
                         <tr class="prop">
-                            <td valign="top" class="name">Lucro</td>
+                            <td valign="top" class="name"><g:message code="caixa.totalRecebidoEmServicos.label" default="Total Recebido Em Servicos" /></td>
                             
-                            <td valign="top" class="value">R$${lucro}</td>
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "totalRecebidoEmServicos")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="caixa.totalRecebidoEmVendas.label" default="Total Recebido Em Vendas" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "totalRecebidoEmVendas")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="caixa.totalSalariosAPagar.label" default="Total Salarios AP agar" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "totalSalariosAPagar")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="caixa.totalVendido.label" default="Total Vendido" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: caixaInstance, field: "totalVendido")}</td>
                             
                         </tr>
                     
@@ -104,7 +97,7 @@
             </div>
             <div class="buttons">
                 <g:form>
-                    <g:hiddenField name="id" value="${produtoInstance?.id}" />
+                    <g:hiddenField name="id" value="${caixaInstance?.id}" />
                     <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
                     <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
                 </g:form>

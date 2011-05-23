@@ -91,10 +91,12 @@
                         <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
                     </g:each>
                     
+                    <p><a href="http://localhost:8080/CenterCarService/caixa/index">Ver Caixa</a></p>                    
                     <!--<p><a href="http://localhost:8080/CenterCarService/cliente">Gerenciar Clientes</a></p>
                     <p><a href="http://localhost:8080/CenterCarService/produto">Gerenciar Estoque de Produtos</a></p>
                     <p><a href="http://localhost:8080/CenterCarService/venda">Gerenciar Vendas</a></p>-->
                     <p><a href="http://localhost:8080/CenterCarService/estoque/index">Gerenciar Estoque</a></p>
+                    <p><a href="http://localhost:8080/CenterCarService/funcionario/listSalariosAPagar">Ver Salarios Atrasados</a></p>
                     
                 </ul>
             </div>

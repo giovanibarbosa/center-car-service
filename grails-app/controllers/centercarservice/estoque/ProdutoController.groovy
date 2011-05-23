@@ -37,7 +37,8 @@ class ProdutoController {
             redirect(action: "list")
         }
         else {
-            [produtoInstance: produtoInstance]
+			def lucroDoProduto = produtoInstance.calcularLucro()
+            [produtoInstance: produtoInstance, lucro : lucroDoProduto]
         }
     }
 

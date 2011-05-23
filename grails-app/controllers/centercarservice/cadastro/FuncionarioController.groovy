@@ -1,5 +1,7 @@
 package centercarservice.cadastro
 
+import centercarservice.financeiro.Salario
+
 class FuncionarioController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -7,6 +9,18 @@ class FuncionarioController {
     def index = {
         redirect(action: "list", params: params)
     }
+	
+	def listSalariosAPagar = {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		def salarios = Salario.list()
+		Set funcionariosInstanceList = new HashSet()
+		for(Salario s : salarios) {
+			if (!s.getPago()) {
+				funcionariosInstanceList.add s.getFuncionario()
+			}
+		}
+		return [funcionariosInstanceList  : funcionariosInstanceList , funcionariosInstanceListTotal: funcionariosInstanceList.size()]
+	}
 
     def list = {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)

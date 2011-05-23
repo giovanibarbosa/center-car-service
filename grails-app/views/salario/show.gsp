@@ -37,13 +37,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="salario.valorComissionado.label" default="Valor Comissionado" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: salarioInstance, field: "valorComissionado")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="salario.dataDeVencimento.label" default="Data De Vencimento" /></td>
                             
                             <td valign="top" class="value"><g:formatDate date="${salarioInstance?.dataDeVencimento}" /></td>

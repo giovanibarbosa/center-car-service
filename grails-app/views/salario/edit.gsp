@@ -42,15 +42,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="valorComissionado"><g:message code="salario.valorComissionado.label" default="Valor Comissionado" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: salarioInstance, field: 'valorComissionado', 'errors')}">
-                                    <g:textField name="valorComissionado" value="${fieldValue(bean: salarioInstance, field: 'valorComissionado')}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                   <label for="dataDeVencimento"><g:message code="salario.dataDeVencimento.label" default="Data De Vencimento" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: salarioInstance, field: 'dataDeVencimento', 'errors')}">
