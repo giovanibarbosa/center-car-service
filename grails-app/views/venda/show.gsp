@@ -30,6 +30,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="venda.funcionario.label" default="Funcionario" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="funcionario" action="show" id="${vendaInstance?.funcionario?.id}">${vendaInstance?.funcionario?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="venda.cliente.label" default="Cliente" /></td>
                             
                             <td valign="top" class="value"><g:link controller="cliente" action="show" id="${vendaInstance?.cliente?.id}">${vendaInstance?.cliente?.encodeAsHTML()}</g:link></td>
@@ -37,9 +44,23 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="venda.funcionario.label" default="Funcionario" /></td>
+                            <td valign="top" class="name"><g:message code="venda.tipoDePagamento.label" default="Tipo De Pagamento" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="funcionario" action="show" id="${vendaInstance?.funcionario?.id}">${vendaInstance?.funcionario?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value">${fieldValue(bean: vendaInstance, field: "tipoDePagamento")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="venda.taxaDeDesconto.label" default="Taxa De Desconto" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: vendaInstance, field: "taxaDeDesconto")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="venda.pagamento.label" default="Pagamento" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: vendaInstance, field: "pagamento")}</td>
                             
                         </tr>
                     

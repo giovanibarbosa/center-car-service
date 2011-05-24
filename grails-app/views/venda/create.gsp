@@ -30,6 +30,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="funcionario"><g:message code="venda.funcionario.label" default="Funcionario" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: vendaInstance, field: 'funcionario', 'errors')}">
+                                    <g:select name="funcionario.id" from="${centercarservice.cadastro.Funcionario.list()}" optionKey="id" value="${vendaInstance?.funcionario?.id}"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="cliente"><g:message code="venda.cliente.label" default="Cliente" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: vendaInstance, field: 'cliente', 'errors')}">
@@ -39,10 +48,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="funcionario"><g:message code="venda.funcionario.label" default="Funcionario" /></label>
+                                    <label for="tipoDePagamento"><g:message code="venda.tipoDePagamento.label" default="Tipo De Pagamento" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: vendaInstance, field: 'funcionario', 'errors')}">
-                                    <g:select name="funcionario.id" from="${centercarservice.cadastro.Funcionario.list()}" optionKey="id" value="${vendaInstance?.funcionario?.id}"  />
+                                <td valign="top" class="value ${hasErrors(bean: vendaInstance, field: 'tipoDePagamento', 'errors')}">
+                                    <g:select name="tipoDePagamento" from="${vendaInstance.constraints.tipoDePagamento.inList}" value="${vendaInstance?.tipoDePagamento}" valueMessagePrefix="venda.tipoDePagamento"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="taxaDeDesconto"><g:message code="venda.taxaDeDesconto.label" default="Taxa De Desconto" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: vendaInstance, field: 'taxaDeDesconto', 'errors')}">
+                                    <g:textField name="taxaDeDesconto" value="${fieldValue(bean: vendaInstance, field: 'taxaDeDesconto')}" />
                                 </td>
                             </tr>
                         

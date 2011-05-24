@@ -9,6 +9,7 @@ class Funcionario extends Cadastravel {
 	static hasMany = [salarios:Salario, vendas:Venda]
 
 	static constraints = {
+		salarios()
 
 	}
 

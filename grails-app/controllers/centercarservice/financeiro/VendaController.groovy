@@ -1,7 +1,8 @@
 package centercarservice.financeiro
 
 class VendaController {
-
+	def VendaService vendaService
+	
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index = {
@@ -21,6 +22,7 @@ class VendaController {
 
     def save = {
         def vendaInstance = new Venda(params)
+		vendaInstance.pagamento = vendaService.definePagamento(vendaInstance)//FIXME
         if (vendaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'venda.label', default: 'Venda'), vendaInstance.id])}"
             redirect(action: "show", id: vendaInstance.id)
@@ -29,6 +31,13 @@ class VendaController {
             render(view: "create", model: [vendaInstance: vendaInstance])
         }
     }
+	
+	def ajaxPagamento = {
+		def pagamento = vendaService.definePagamento(vendaInstance)
+		if (pagamento instanceof Pagamento) {
+			render "Entrou no AJAX"
+		}
+	}
 
     def show = {
         def vendaInstance = Venda.get(params.id)
