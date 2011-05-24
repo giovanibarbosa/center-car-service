@@ -4,8 +4,7 @@ class Produto {
 
 	String referencia
 	String descricao
-	double precoDeVenda
-	double lucro
+	BigDecimal precoDeVenda, precoDeCompra
 	Date garantia
 
 	Date dataDaCompra
@@ -20,6 +19,6 @@ class Produto {
 	}
 	
 	def calcularLucro() {
-		
+		precoDeVenda - precoDeCompra
 	}
 }
