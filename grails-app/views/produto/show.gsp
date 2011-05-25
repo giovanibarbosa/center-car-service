@@ -51,16 +51,16 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.dataDaCompra.label" default="Data Da Compra" /></td>
+                            <td valign="top" class="name"><g:message code="produto.precoDeCompra.label" default="Preco De Compra" /></td>
                             
-                            <td valign="top" class="value"><g:formatDate date="${produtoInstance?.dataDaCompra}" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: produtoInstance, field: "precoDeCompra")}</td>
                             
                         </tr>
-                    
+                        
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.dataDePagamento.label" default="Data De Pagamento" /></td>
+                            <td valign="top" class="name"><g:message code="Lucro" default="Lucro" /></td>
                             
-                            <td valign="top" class="value"><g:formatDate date="${produtoInstance?.dataDePagamento}" /></td>
+                            <td valign="top" class="value">${produtoInstance.calcularLucro()}</td>
                             
                         </tr>
                     
@@ -72,6 +72,20 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="produto.dataDePagamento.label" default="Data De Pagamento" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${produtoInstance?.dataDePagamento}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="produto.vendido.label" default="Vendido" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: produtoInstance, field: "vendido")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="produto.garantia.label" default="Garantia" /></td>
                             
                             <td valign="top" class="value"><g:formatDate date="${produtoInstance?.garantia}" /></td>
@@ -79,23 +93,23 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.lucro.label" default="Lucro" /></td>
+                            <td valign="top" class="name"><g:message code="produto.dataDaCompra.label" default="Data Da Compra" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: produtoInstance, field: "lucro")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="produto.quitado.label" default="Quitado" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${produtoInstance?.quitado}" /></td>
+                            <td valign="top" class="value"><g:formatDate date="${produtoInstance?.dataDaCompra}" /></td>
                             
                         </tr>
                         
                         <tr class="prop">
-                            <td valign="top" class="name">Lucro</td>
+                            <td valign="top" class="name"><g:message code="Esta Quitado" default="Esta Quitado" /></td>
                             
-                            <td valign="top" class="value">R$${lucro}</td>
+                            <td valign="top" class="value">${produtoInstance.estaQuitado()}</td>
+                            
+                        </tr>
+                        
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="Pagamento Esta Vencido" default="Pagamento Esta Vencido" /></td>
+                            
+                            <td valign="top" class="value">${produtoInstance.pgtoEstaVencido()}</td>
                             
                         </tr>
                     

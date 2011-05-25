@@ -60,19 +60,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="dataDaCompra"><g:message code="produto.dataDaCompra.label" default="Data Da Compra" /></label>
+                                  <label for="precoDeCompra"><g:message code="produto.precoDeCompra.label" default="Preco De Compra" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'dataDaCompra', 'errors')}">
-                                    <g:datePicker name="dataDaCompra" precision="day" value="${produtoInstance?.dataDaCompra}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="dataDePagamento"><g:message code="produto.dataDePagamento.label" default="Data De Pagamento" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'dataDePagamento', 'errors')}">
-                                    <g:datePicker name="dataDePagamento" precision="day" value="${produtoInstance?.dataDePagamento}"  />
+                                <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'precoDeCompra', 'errors')}">
+                                    <g:textField name="precoDeCompra" value="${fieldValue(bean: produtoInstance, field: 'precoDeCompra')}" />
                                 </td>
                             </tr>
                         
@@ -81,7 +72,25 @@
                                   <label for="dataDeVencimento"><g:message code="produto.dataDeVencimento.label" default="Data De Vencimento" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'dataDeVencimento', 'errors')}">
-                                    <g:datePicker name="dataDeVencimento" precision="day" value="${produtoInstance?.dataDeVencimento}"  />
+                                    <g:datePicker name="dataDeVencimento" precision="day" value="${produtoInstance?.dataDeVencimento}" default="none" noSelection="['': '']" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="dataDePagamento"><g:message code="produto.dataDePagamento.label" default="Data De Pagamento" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'dataDePagamento', 'errors')}">
+                                    <g:datePicker name="dataDePagamento" precision="day" value="${produtoInstance?.dataDePagamento}" default="none" noSelection="['': '']" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="vendido"><g:message code="produto.vendido.label" default="Vendido" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'vendido', 'errors')}">
+                                    <g:select name="vendido" from="${produtoInstance.constraints.vendido.inList}" value="${produtoInstance?.vendido}" valueMessagePrefix="produto.vendido"  />
                                 </td>
                             </tr>
                         
@@ -90,25 +99,16 @@
                                   <label for="garantia"><g:message code="produto.garantia.label" default="Garantia" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'garantia', 'errors')}">
-                                    <g:datePicker name="garantia" precision="day" value="${produtoInstance?.garantia}"  />
+                                    <g:datePicker name="garantia" precision="day" value="${produtoInstance?.garantia}" default="none" noSelection="['': '']" />
                                 </td>
                             </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="lucro"><g:message code="produto.lucro.label" default="Lucro" /></label>
+                                  <label for="dataDaCompra"><g:message code="produto.dataDaCompra.label" default="Data Da Compra" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'lucro', 'errors')}">
-                                    <g:textField name="lucro" value="${fieldValue(bean: produtoInstance, field: 'lucro')}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="quitado"><g:message code="produto.quitado.label" default="Quitado" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'quitado', 'errors')}">
-                                    <g:checkBox name="quitado" value="${produtoInstance?.quitado}" />
+                                <td valign="top" class="value ${hasErrors(bean: produtoInstance, field: 'dataDaCompra', 'errors')}">
+                                    <g:datePicker name="dataDaCompra" precision="day" value="${produtoInstance?.dataDaCompra}"  />
                                 </td>
                             </tr>
                         

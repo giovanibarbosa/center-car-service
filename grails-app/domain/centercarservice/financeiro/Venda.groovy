@@ -8,7 +8,8 @@ class Venda {
 	Funcionario funcionario
 	Pagamento pagamento
 	String tipoDePagamento
-	BigDecimal taxaDeDesconto
+	BigDecimal taxaDeDesconto = new BigDecimal(0)
+	Date dataDaVenda
 
 	static embedded = ['pagamento']
 	static hasMany = [produtos:Produto]
@@ -16,33 +17,38 @@ class Venda {
 	static constraints = {
 		funcionario()
 		cliente()
+		dataDaVenda()
 		tipoDePagamento(inList: [
 			"A Vista",
 			"Cartao de Debito",
 			"Cartao de Credito",
 			"Cheque"
 		])
-		taxaDeDesconto(min:new BigDecimal(0))
+		taxaDeDesconto(min:new BigDecimal(0), scale:2)
 		pagamento(display:false)
 	}
 
 	def calculaValorTotal() {
-		def resultado = 0
+		def resultado = new BigDecimal(0)
+		resultado.scale = 2
 		if(produtos != null) {
 			for(Produto p : produtos)
-			resultado += p.precoDeVenda			
+				resultado += p.precoDeVenda
 		}
 		return resultado - (resultado * taxaDeDesconto / 100)
 	}
 
 	def calculaLucroTotal() {
-		def resultado = 0
+		def resultado = new BigDecimal(0)
+		resultado.scale = 2
 		if(produtos != null) {
 			for(Produto p : produtos)
-			resultado += p.precoDeCompra
+				resultado += p.precoDeCompra
 		}
 		return calculaLucroTotal() - resultado
 	}
-	
-	
+
+	String toString() {
+		return "${produtos} : Funcionario ${funcionario} : Cliente ${cliente} : Valor Da Venda ${calculaValorTotal()}"
+	}
 }
