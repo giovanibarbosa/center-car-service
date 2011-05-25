@@ -1,5 +1,7 @@
 package centercarservice.financeiro
 
+import centercarservice.estoque.Produto;
+
 class VendaService {
 
     static transactional = true
@@ -7,6 +9,12 @@ class VendaService {
     def serviceMethod() {
 
     }
+	
+	def void editaProdutosParaVendidos(Venda vendaInstance) {
+		for(Produto p : vendaInstance.produtos) {
+			p.vendido = "sim"
+		}
+	}
 	
 	def definePagamento(Venda venda) {
 		if(venda.tipoDePagamento == "A Vista" || venda.tipoDePagamento == "Cartao de Debito") {

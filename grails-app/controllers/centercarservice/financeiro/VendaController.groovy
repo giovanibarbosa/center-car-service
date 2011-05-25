@@ -1,9 +1,11 @@
 package centercarservice.financeiro
 
+
 class VendaController {
-	def VendaService vendaService
 	
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
+	def VendaService vendaService
 
     def index = {
         redirect(action: "list", params: params)
@@ -22,7 +24,8 @@ class VendaController {
 
     def save = {
         def vendaInstance = new Venda(params)
-		vendaInstance.pagamento = vendaService.definePagamento(vendaInstance)//FIXME
+//		vendaInstance.pagamento = vendaService.definePagamento(vendaInstance)//FIXME
+		vendaService.editaProdutosParaVendidos(vendaInstance)
         if (vendaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'venda.label', default: 'Venda'), vendaInstance.id])}"
             redirect(action: "show", id: vendaInstance.id)

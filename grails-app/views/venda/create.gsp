@@ -69,7 +69,7 @@
                                   <label for="produtos"><g:message code="venda.produtos.label" default="Produtos" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: vendaInstance, field: 'produtos', 'errors')}">
-                                    <g:select name="produtos" from="${centercarservice.estoque.Produto.list()}" multiple="yes" optionKey="id" size="10" value="${vendaInstance?.produtos*.id}" />
+                                    <g:select name="produtos" from="${centercarservice.estoque.Produto.findAllByVendidoNotEqual('sim')}" multiple="yes" optionKey="id" size="10" value="${vendaInstance?.produtos*.id}" />
                                 </td>
                             </tr>
                         

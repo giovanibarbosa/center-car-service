@@ -17,7 +17,7 @@ class Venda {
 	static constraints = {
 		funcionario()
 		cliente()
-		dataDaVenda()
+		dataDaVenda(nullable:true) //FIXME não é nullable
 		tipoDePagamento(inList: [
 			"A Vista",
 			"Cartao de Debito",
@@ -25,7 +25,7 @@ class Venda {
 			"Cheque"
 		])
 		taxaDeDesconto(min:new BigDecimal(0), scale:2)
-		pagamento(display:false)
+		pagamento(display:false, nullable:true)//FIXME não é nullable
 	}
 
 	def calculaValorTotal() {
