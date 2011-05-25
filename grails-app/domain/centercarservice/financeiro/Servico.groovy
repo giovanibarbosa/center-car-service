@@ -1,20 +1,21 @@
 package centercarservice.financeiro
 
+import centercarservice.cadastro.Carro;
 import centercarservice.estoque.Produto;
 
 class Servico {
-	Date dataDoServico, dataDePagamento, dataDeVencimento
+	Date dataDoServico
 	String descricao, observacoes, formaDePagamento
-	BigDecimal valor
-	Boolean quitado //Derivado de data de pagamento
+	BigDecimal valorDaMaoDeObra = new BigDecimal(0)
+	BigDecimal taxaDeDesconto = new BigDecimal(0)
 
 	static hasMany = [produtos:Produto]
+	static belongsTo = [carro: Carro]
 
 	static constraints = {
-		descricao(blank:false)
+		carro()
+		descricao()
 		dataDoServico(nullable:true)
-		dataDeVencimento(nullable:true)
-		dataDePagamento(nullable:true)
 		observacoes(maxSize:1000)
 		formaDePagamento(inList:[
 			"Dinheiro",
@@ -22,6 +23,20 @@ class Servico {
 			"CartaoDeDebito",
 			"Cheque"
 		])
-		quitado(display:false)
+		valorDaMaoDeObra(scale:2, min:new BigDecimal(0))
+		taxaDeDesconto(min:new BigDecimal(0), max:new BigDecimal(100))
+	}
+
+	def calculaValorTotal() {
+		def BigDecimal result = new BigDecimal(0)
+		result.scale = 2
+		for(Produto p : produtos) {
+			result += p.precoDeVenda
+		}
+		return valorDaMaoDeObra + result - (result * taxaDeDesconto / 100)
+	}
+
+	String toString() {
+		return "Carro ${carro} : ${descricao} : ${dataDoServico.format('dd/MM/yyyy')} : Valor ${calculaValorTotal()} "
 	}
 }

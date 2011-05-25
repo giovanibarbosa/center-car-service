@@ -1,5 +1,7 @@
 package centercarservice.financeiro
 
+import java.util.Date;
+
 import centercarservice.cadastro.*;
 import centercarservice.estoque.*;
 
@@ -24,7 +26,7 @@ class Venda {
 			"Cartao de Credito",
 			"Cheque"
 		])
-		taxaDeDesconto(min:new BigDecimal(0), scale:2)
+		taxaDeDesconto(min:new BigDecimal(0), max:new BigDecimal(100))
 		pagamento(display:false, nullable:true)//FIXME não é nullable
 	}
 
