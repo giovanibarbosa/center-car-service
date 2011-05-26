@@ -1,6 +1,6 @@
 package centercarservice.cadastro
 
-import java.sql.Date;
+import java.util.Date;
 
 import centercarservice.financeiro.Servico;
 
@@ -14,18 +14,14 @@ class Carro {
 	
     static constraints = {
 		nome(blank:false)
-		ano(inList:listaAnos())
+		ano()
 		motor()
 		cor()
 		placa(length:7)
 		tipoDeCombustivel(inList:["Gasolina", "Alcool", "GNV", "Flex"])
 	}
 	
-	def List listaAnos() {
-		def List anos
-		for (int i = 1950; i <= (new java.util.Date().getYear().toString()) ; i++) {
-			anos.add(i)
-		}
-		return anos
+	String toString() {
+		return "${nome} : Placa ${placa} : Motor ${motor} : ${ano} : Cor: ${cor} ${tipoDeCombustivel}"
 	}
 }

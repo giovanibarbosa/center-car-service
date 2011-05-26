@@ -31,9 +31,7 @@
                             <g:sortableColumn property="tipoDePagamento" title="${message(code: 'venda.tipoDePagamento.label', default: 'Tipo De Pagamento')}" />
                         
                             <g:sortableColumn property="taxaDeDesconto" title="${message(code: 'venda.taxaDeDesconto.label', default: 'Taxa De Desconto')}" />
-                        
-                            <th><g:message code="venda.pagamento.label" default="Pagamento" /></th>
-                        
+                                                
                         </tr>
                     </thead>
                     <tbody>
@@ -49,9 +47,7 @@
                             <td>${fieldValue(bean: vendaInstance, field: "tipoDePagamento")}</td>
                         
                             <td>${fieldValue(bean: vendaInstance, field: "taxaDeDesconto")}</td>
-                        
-                            <td>${fieldValue(bean: vendaInstance, field: "pagamento")}</td>
-                        
+                                                
                         </tr>
                     </g:each>
                     </tbody>

@@ -18,6 +18,18 @@ class CartaoDeCreditoController {
         cartaoDeCreditoInstance.properties = params
         return [cartaoDeCreditoInstance: cartaoDeCreditoInstance]
     }
+	
+	def saveWithValue = {
+		def cartaoDeCreditoInstance = new CartaoDeCredito(params)
+		cartaoDeCreditoInstance.venda = Venda.get(params.vendaId)
+		if (cartaoDeCreditoInstance.save(flush: true)) {
+			flash.message = "${message(code: 'default.created.message', args: [message(code: 'cartaodecredito.label', default: 'CartaoDeCredito'), cartaoDeCreditoInstance.id])}"
+			redirect(action: "edit", id: cartaoDeCreditoInstance.id)
+		}
+		else {
+			render(view: "create", model: [cartaoDeCreditoInstance: cartaoDeCreditoInstance])
+		}
+	}
 
     def save = {
         def cartaoDeCreditoInstance = new CartaoDeCredito(params)

@@ -30,9 +30,9 @@
                         
                             <g:sortableColumn property="dataDoRecebimento" title="${message(code: 'cheque.dataDoRecebimento.label', default: 'Data Do Recebimento')}" />
                         
-                            <g:sortableColumn property="numeroDoCheque" title="${message(code: 'cheque.numeroDoCheque.label', default: 'Numero Do Cheque')}" />
+                            <th><g:message code="cheque.venda.label" default="Venda" /></th>
                         
-                            <g:sortableColumn property="banco" title="${message(code: 'cheque.banco.label', default: 'Banco')}" />
+                            <th><g:message code="cheque.servico.label" default="Servico" /></th>
                         
                         </tr>
                     </thead>
@@ -48,9 +48,9 @@
                         
                             <td><g:formatDate date="${chequeInstance.dataDoRecebimento}" /></td>
                         
-                            <td>${fieldValue(bean: chequeInstance, field: "numeroDoCheque")}</td>
+                            <td>${fieldValue(bean: chequeInstance, field: "venda")}</td>
                         
-                            <td>${fieldValue(bean: chequeInstance, field: "banco")}</td>
+                            <td>${fieldValue(bean: chequeInstance, field: "servico")}</td>
                         
                         </tr>
                     </g:each>

@@ -30,7 +30,9 @@
                         
                             <g:sortableColumn property="dataDoRecebimento" title="${message(code: 'cartaoDeCredito.dataDoRecebimento.label', default: 'Data Do Recebimento')}" />
                         
-                            <g:sortableColumn property="quantidadeDeParcelas" title="${message(code: 'cartaoDeCredito.quantidadeDeParcelas.label', default: 'Quantidade De Parcelas')}" />
+                            <th><g:message code="cartaoDeCredito.venda.label" default="Venda" /></th>
+                        
+                            <th><g:message code="cartaoDeCredito.servico.label" default="Servico" /></th>
                         
                         </tr>
                     </thead>
@@ -46,7 +48,9 @@
                         
                             <td><g:formatDate date="${cartaoDeCreditoInstance.dataDoRecebimento}" /></td>
                         
-                            <td>${fieldValue(bean: cartaoDeCreditoInstance, field: "quantidadeDeParcelas")}</td>
+                            <td>${fieldValue(bean: cartaoDeCreditoInstance, field: "venda")}</td>
+                        
+                            <td>${fieldValue(bean: cartaoDeCreditoInstance, field: "servico")}</td>
                         
                         </tr>
                     </g:each>

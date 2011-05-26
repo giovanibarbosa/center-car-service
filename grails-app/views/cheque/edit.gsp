@@ -45,7 +45,7 @@
                                   <label for="dataDoVencimento"><g:message code="cheque.dataDoVencimento.label" default="Data Do Vencimento" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: chequeInstance, field: 'dataDoVencimento', 'errors')}">
-                                    <g:datePicker name="dataDoVencimento" precision="day" value="${chequeInstance?.dataDoVencimento}"  />
+                                    <g:datePicker name="dataDoVencimento" precision="day" value="${chequeInstance?.dataDoVencimento}" default="none" noSelection="['': '']" />
                                 </td>
                             </tr>
                         
@@ -55,6 +55,24 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: chequeInstance, field: 'dataDoRecebimento', 'errors')}">
                                     <g:datePicker name="dataDoRecebimento" precision="day" value="${chequeInstance?.dataDoRecebimento}" default="none" noSelection="['': '']" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="venda"><g:message code="cheque.venda.label" default="Venda" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: chequeInstance, field: 'venda', 'errors')}">
+                                    <g:select name="venda.id" from="${centercarservice.financeiro.Venda.list()}" optionKey="id" value="${chequeInstance?.venda?.id}" noSelection="['null': '']" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="servico"><g:message code="cheque.servico.label" default="Servico" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: chequeInstance, field: 'servico', 'errors')}">
+                                    <g:select name="servico.id" from="${centercarservice.financeiro.Servico.list()}" optionKey="id" value="${chequeInstance?.servico?.id}" noSelection="['null': '']" />
                                 </td>
                             </tr>
                         
