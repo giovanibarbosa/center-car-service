@@ -25,10 +25,16 @@ class VendaController {
     def save = {
         def vendaInstance = new Venda(params)
 //		vendaInstance.pagamento = vendaService.definePagamento(vendaInstance)//FIXME
-		vendaService.editaProdutosParaVendidos(vendaInstance)
-        if (vendaInstance.save(flush: true)) {
+		
+        if (vendaInstance.save(flush: true)) {			
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'venda.label', default: 'Venda'), vendaInstance.id])}"
-            redirect(action: "show", id: vendaInstance.id)
+			
+			vendaService.editaProdutosParaVendidos(vendaInstance)
+			redirect(controller:vendaService.getNomeDoContoller(vendaInstance.tipoDePagamento), 
+				action:"saveWithValue", params: 
+				[valor: vendaInstance.calculaValorTotal().toString().replace(".", ","), vendaId: vendaInstance.id])
+						
+//            redirect(action: "show", id: vendaInstance.id)
         }
         else {
             render(view: "create", model: [vendaInstance: vendaInstance])

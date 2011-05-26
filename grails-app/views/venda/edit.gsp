@@ -48,6 +48,15 @@
                                     <g:select name="cliente.id" from="${centercarservice.cadastro.Cliente.list()}" optionKey="id" value="${vendaInstance?.cliente?.id}"  />
                                 </td>
                             </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="dataDaVenda"><g:message code="venda.dataDaVenda.label" default="Data Da Venda" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: vendaInstance, field: 'dataDaVenda', 'errors')}">
+                                    <g:datePicker name="dataDaVenda" precision="day" value="${vendaInstance?.dataDaVenda}"  />
+                                </td>
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">

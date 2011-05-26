@@ -51,6 +51,20 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="cheque.venda.label" default="Venda" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="venda" action="show" id="${chequeInstance?.venda?.id}">${chequeInstance?.venda?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="cheque.servico.label" default="Servico" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="servico" action="show" id="${chequeInstance?.servico?.id}">${chequeInstance?.servico?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="cheque.numeroDoCheque.label" default="Numero Do Cheque" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: chequeInstance, field: "numeroDoCheque")}</td>

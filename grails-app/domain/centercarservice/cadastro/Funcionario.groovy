@@ -4,17 +4,16 @@ import centercarservice.financeiro.Salario;
 import centercarservice.financeiro.Venda;
 
 class Funcionario extends Cadastravel {
-	//double totalEmSalariosAtrasados //TODO na gsp
-
+	Date dataDeIngresso
+	
 	static hasMany = [salarios:Salario, vendas:Venda]
 
 	static constraints = {
-		salarios()
-
+		dataDeIngresso()
 	}
 
 	String toString() {
-		return "${nome} - ${rg}"
+		return "${nome} : ${rg}"
 	}
 
 	def Integer calculaSalariosAtrasados() {

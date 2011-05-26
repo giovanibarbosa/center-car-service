@@ -8,6 +8,10 @@ class CartaoDeCredito extends Pagamento {
     }
 	
 	def calculaValorDaParcela() {
-		return valor / quantidadeDeParcelas
+		return valor.divide(quantidadeDeParcelas)
+	}
+	
+	String toString() {
+		return "${valor} : Numero de parcelas ${quantidadeDeParcelas} de ${calculaValorDaParcela()}"
 	}
 }

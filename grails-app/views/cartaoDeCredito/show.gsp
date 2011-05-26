@@ -51,6 +51,20 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="cartaoDeCredito.venda.label" default="Venda" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="venda" action="show" id="${cartaoDeCreditoInstance?.venda?.id}">${cartaoDeCreditoInstance?.venda?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="cartaoDeCredito.servico.label" default="Servico" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="servico" action="show" id="${cartaoDeCreditoInstance?.servico?.id}">${cartaoDeCreditoInstance?.servico?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="cartaoDeCredito.quantidadeDeParcelas.label" default="Quantidade De Parcelas" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: cartaoDeCreditoInstance, field: "quantidadeDeParcelas")}</td>

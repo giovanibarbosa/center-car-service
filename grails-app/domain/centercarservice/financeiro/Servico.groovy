@@ -29,11 +29,11 @@ class Servico {
 
 	def calculaValorTotal() {
 		def BigDecimal result = new BigDecimal(0)
-		result.scale = 2
+		result.setScale(2)
 		for(Produto p : produtos) {
 			result += p.precoDeVenda
 		}
-		return valorDaMaoDeObra + result - (result * taxaDeDesconto / 100)
+		return valorDaMaoDeObra.add(result.subtract((result.mutiply(taxaDeDesconto).divide(new BigDecimal(100))))) 
 	}
 
 	String toString() {

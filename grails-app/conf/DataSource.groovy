@@ -7,7 +7,6 @@ dataSource {
 	username = "root"
 	password =  "root"
 	dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-	dbCreate = "update"
 }
 
 hibernate {
@@ -26,13 +25,13 @@ environments {
 	}
 	test {
 		dataSource {
-			dbCreate = "update"
+			dbCreate = "create-drop"
 			url = "jdbc:mysql://localhost/CenterCarService"
 		}
 	}
 	production {
 		dataSource {
-			dbCreate = "update"
+			dbCreate = "create-drop"
 			url = "jdbc:mysql://localhost/CenterCarService"
 		}
 	}

@@ -2,7 +2,7 @@ package centercarservice.financeiro
 
 import grails.test.*
 
-class PagamentoControllerTests extends ControllerUnitTestCase {
+class PagamentoAVistaControllerTests extends ControllerUnitTestCase {
     protected void setUp() {
         super.setUp()
     }

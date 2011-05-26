@@ -18,6 +18,18 @@ class ChequeController {
         chequeInstance.properties = params
         return [chequeInstance: chequeInstance]
     }
+	
+	def saveWithValue = {
+		def chequeInstance = new Cheque(params)
+		chequeInstance.venda = Venda.get(params.vendaId)
+		if (chequeInstance.save(flush: true)) {
+			flash.message = "${message(code: 'default.created.message', args: [message(code: 'cheque.label', default: 'Cheque'), chequeInstance.id])}"
+			redirect(action: "edit", id: chequeInstance.id)
+		}
+		else {
+			render(view: "create", model: [chequeInstance: chequeInstance])
+		}
+	}
 
     def save = {
         def chequeInstance = new Cheque(params)
