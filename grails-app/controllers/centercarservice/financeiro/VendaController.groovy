@@ -30,7 +30,7 @@ class VendaController {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'venda.label', default: 'Venda'), vendaInstance.id])}"
 			
 			vendaService.editaProdutosParaVendidos(vendaInstance)
-			redirect(controller:vendaService.getNomeDoContoller(vendaInstance.tipoDePagamento), 
+			redirect(controller:vendaService.getNomeDoController(vendaInstance.tipoDePagamento), 
 				action:"saveWithValue", params: 
 				[valor: vendaInstance.calculaValorTotal().toString().replace(".", ","), vendaId: vendaInstance.id])
 						
@@ -40,13 +40,6 @@ class VendaController {
             render(view: "create", model: [vendaInstance: vendaInstance])
         }
     }
-	
-	def ajaxPagamento = {
-		def pagamento = vendaService.definePagamento(vendaInstance)
-		if (pagamento instanceof Pagamento) {
-			render "Entrou no AJAX"
-		}
-	}
 
     def show = {
         def vendaInstance = Venda.get(params.id)

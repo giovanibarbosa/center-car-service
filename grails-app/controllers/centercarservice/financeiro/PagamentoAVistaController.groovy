@@ -30,6 +30,18 @@ class PagamentoAVistaController {
 			render(view: "create", model: [pagamentoAVistaInstance: pagamentoAVistaInstance])
 		}
 	}
+	
+	def saveServiceWithValue = {
+		def pagamentoAVistaInstance = new PagamentoAVista(params)
+		pagamentoAVistaInstance.servico = Venda.get(params.servicoId)
+		if (pagamentoAVistaInstance.save(flush: true)) {
+			flash.message = "${message(code: 'default.created.message', args: [message(code: 'pagamentoAVista.label', default: 'PagamentoAVista'), pagamentoAVistaInstance.id])}"
+			redirect(action: "edit", id: pagamentoAVistaInstance.id)
+		}
+		else {
+			render(view: "create", model: [pagamentoAVistaInstance: pagamentoAVistaInstance])
+		}
+	}
 
     def save = {
         def pagamentoAVistaInstance = new PagamentoAVista(params)
