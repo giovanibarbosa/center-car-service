@@ -30,6 +30,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="servico.carro.label" default="Carro" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="carro" action="show" id="${servicoInstance?.carro?.id}">${servicoInstance?.carro?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="servico.descricao.label" default="Descricao" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: servicoInstance, field: "descricao")}</td>
@@ -40,20 +47,6 @@
                             <td valign="top" class="name"><g:message code="servico.dataDoServico.label" default="Data Do Servico" /></td>
                             
                             <td valign="top" class="value"><g:formatDate date="${servicoInstance?.dataDoServico}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="servico.dataDeVencimento.label" default="Data De Vencimento" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${servicoInstance?.dataDeVencimento}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="servico.dataDePagamento.label" default="Data De Pagamento" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${servicoInstance?.dataDePagamento}" /></td>
                             
                         </tr>
                     
@@ -72,9 +65,16 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="servico.quitado.label" default="Quitado" /></td>
+                            <td valign="top" class="name"><g:message code="servico.valorDaMaoDeObra.label" default="Valor Da Mao De Obra" /></td>
                             
-                            <td valign="top" class="value"><g:formatBoolean boolean="${servicoInstance?.quitado}" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: servicoInstance, field: "valorDaMaoDeObra")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="servico.taxaDeDesconto.label" default="Taxa De Desconto" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: servicoInstance, field: "taxaDeDesconto")}</td>
                             
                         </tr>
                     
@@ -88,13 +88,6 @@
                                 </g:each>
                                 </ul>
                             </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="servico.valor.label" default="Valor" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: servicoInstance, field: "valor")}</td>
                             
                         </tr>
                     

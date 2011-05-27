@@ -18,9 +18,9 @@ class Servico {
 		dataDoServico(nullable:true)
 		observacoes(maxSize:1000)
 		formaDePagamento(inList:[
-			"Dinheiro",
-			"CartaoDeCredito",
-			"CartaoDeDebito",
+			"A Vista",
+			"Cartao de Debito",
+			"Cartao de Credito",
 			"Cheque"
 		])
 		valorDaMaoDeObra(scale:2, min:new BigDecimal(0))
@@ -33,10 +33,10 @@ class Servico {
 		for(Produto p : produtos) {
 			result += p.precoDeVenda
 		}
-		return valorDaMaoDeObra.add(result.subtract((result.mutiply(taxaDeDesconto).divide(new BigDecimal(100))))) 
+		return valorDaMaoDeObra.add(result.subtract(result.multiply(taxaDeDesconto).divide(new BigDecimal(100)))) 
 	}
 
 	String toString() {
-		return "Carro ${carro} : ${descricao} : ${dataDoServico.format('dd/MM/yyyy')} : Valor ${calculaValorTotal()} "
+		return "Carro ${carro} : ${descricao} : Valor ${calculaValorTotal()} "
 	}
 }

@@ -33,6 +33,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="carro"><g:message code="servico.carro.label" default="Carro" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'carro', 'errors')}">
+                                    <g:select name="carro.id" from="${centercarservice.cadastro.Carro.list()}" optionKey="id" value="${servicoInstance?.carro?.id}"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="descricao"><g:message code="servico.descricao.label" default="Descricao" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'descricao', 'errors')}">
@@ -46,24 +55,6 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'dataDoServico', 'errors')}">
                                     <g:datePicker name="dataDoServico" precision="day" value="${servicoInstance?.dataDoServico}" default="none" noSelection="['': '']" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="dataDeVencimento"><g:message code="servico.dataDeVencimento.label" default="Data De Vencimento" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'dataDeVencimento', 'errors')}">
-                                    <g:datePicker name="dataDeVencimento" precision="day" value="${servicoInstance?.dataDeVencimento}" default="none" noSelection="['': '']" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="dataDePagamento"><g:message code="servico.dataDePagamento.label" default="Data De Pagamento" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'dataDePagamento', 'errors')}">
-                                    <g:datePicker name="dataDePagamento" precision="day" value="${servicoInstance?.dataDePagamento}" default="none" noSelection="['': '']" />
                                 </td>
                             </tr>
                         
@@ -87,10 +78,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="quitado"><g:message code="servico.quitado.label" default="Quitado" /></label>
+                                  <label for="valorDaMaoDeObra"><g:message code="servico.valorDaMaoDeObra.label" default="Valor Da Mao De Obra" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'quitado', 'errors')}">
-                                    <g:checkBox name="quitado" value="${servicoInstance?.quitado}" />
+                                <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'valorDaMaoDeObra', 'errors')}">
+                                    <g:textField name="valorDaMaoDeObra" value="${fieldValue(bean: servicoInstance, field: 'valorDaMaoDeObra')}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="taxaDeDesconto"><g:message code="servico.taxaDeDesconto.label" default="Taxa De Desconto" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'taxaDeDesconto', 'errors')}">
+                                    <g:textField name="taxaDeDesconto" value="${fieldValue(bean: servicoInstance, field: 'taxaDeDesconto')}" />
                                 </td>
                             </tr>
                         
@@ -100,15 +100,6 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'produtos', 'errors')}">
                                     <g:select name="produtos" from="${centercarservice.estoque.Produto.list()}" multiple="yes" optionKey="id" size="5" value="${servicoInstance?.produtos*.id}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="valor"><g:message code="servico.valor.label" default="Valor" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: servicoInstance, field: 'valor', 'errors')}">
-                                    <g:textField name="valor" value="${fieldValue(bean: servicoInstance, field: 'valor')}" />
                                 </td>
                             </tr>
                         

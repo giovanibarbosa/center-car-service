@@ -31,9 +31,9 @@ class ChequeController {
 		}
 	}
 	
-	def saveServiceWithValue = {
+	def serviceWithValue = {
 		def chequeInstance = new Cheque(params)
-		chequeInstance.servico = Venda.get(params.servicoId)
+		chequeInstance.servico = Servico.get(params.servicoId)
 		if (chequeInstance.save(flush: true)) {
 			flash.message = "${message(code: 'default.created.message', args: [message(code: 'cheque.label', default: 'Cheque'), chequeInstance.id])}"
 			redirect(action: "edit", id: chequeInstance.id)

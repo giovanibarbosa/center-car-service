@@ -31,9 +31,9 @@ class PagamentoAVistaController {
 		}
 	}
 	
-	def saveServiceWithValue = {
+	def serviceWithValue = {
 		def pagamentoAVistaInstance = new PagamentoAVista(params)
-		pagamentoAVistaInstance.servico = Venda.get(params.servicoId)
+		pagamentoAVistaInstance.servico = Servico.get(params.servicoId)
 		if (pagamentoAVistaInstance.save(flush: true)) {
 			flash.message = "${message(code: 'default.created.message', args: [message(code: 'pagamentoAVista.label', default: 'PagamentoAVista'), pagamentoAVistaInstance.id])}"
 			redirect(action: "edit", id: pagamentoAVistaInstance.id)

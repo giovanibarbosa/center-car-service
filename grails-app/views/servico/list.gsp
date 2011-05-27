@@ -24,15 +24,15 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'servico.id.label', default: 'Id')}" />
                         
+                            <th><g:message code="servico.carro.label" default="Carro" /></th>
+                        
                             <g:sortableColumn property="descricao" title="${message(code: 'servico.descricao.label', default: 'Descricao')}" />
                         
                             <g:sortableColumn property="dataDoServico" title="${message(code: 'servico.dataDoServico.label', default: 'Data Do Servico')}" />
                         
-                            <g:sortableColumn property="dataDeVencimento" title="${message(code: 'servico.dataDeVencimento.label', default: 'Data De Vencimento')}" />
-                        
-                            <g:sortableColumn property="dataDePagamento" title="${message(code: 'servico.dataDePagamento.label', default: 'Data De Pagamento')}" />
-                        
                             <g:sortableColumn property="observacoes" title="${message(code: 'servico.observacoes.label', default: 'Observacoes')}" />
+                        
+                            <g:sortableColumn property="formaDePagamento" title="${message(code: 'servico.formaDePagamento.label', default: 'Forma De Pagamento')}" />
                         
                         </tr>
                     </thead>
@@ -42,15 +42,15 @@
                         
                             <td><g:link action="show" id="${servicoInstance.id}">${fieldValue(bean: servicoInstance, field: "id")}</g:link></td>
                         
+                            <td>${fieldValue(bean: servicoInstance, field: "carro")}</td>
+                        
                             <td>${fieldValue(bean: servicoInstance, field: "descricao")}</td>
                         
                             <td><g:formatDate date="${servicoInstance.dataDoServico}" /></td>
                         
-                            <td><g:formatDate date="${servicoInstance.dataDeVencimento}" /></td>
-                        
-                            <td><g:formatDate date="${servicoInstance.dataDePagamento}" /></td>
-                        
                             <td>${fieldValue(bean: servicoInstance, field: "observacoes")}</td>
+                        
+                            <td>${fieldValue(bean: servicoInstance, field: "formaDePagamento")}</td>
                         
                         </tr>
                     </g:each>

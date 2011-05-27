@@ -31,9 +31,9 @@ class CartaoDeCreditoController {
 		}
 	}
 	
-	def saveServiceWithValue = {
+	def serviceWithValue = {
 		def cartaoDeCreditoInstance = new CartaoDeCredito(params)
-		cartaoDeCreditoInstance.servico = Venda.get(params.servicoId)
+		cartaoDeCreditoInstance.servico = Servico.get(params.servicoId)
 		if (cartaoDeCreditoInstance.save(flush: true)) {
 			flash.message = "${message(code: 'default.created.message', args: [message(code: 'cartaodecredito.label', default: 'CartaoDeCredito'), cartaoDeCreditoInstance.id])}"
 			redirect(action: "edit", id: cartaoDeCreditoInstance.id)
