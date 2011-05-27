@@ -27,7 +27,7 @@ class ServicoController {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'servico.label', default: 'Servico'), servicoInstance.id])}"
 			servicoService.editaProdutosParaVendidos(servicoInstance)
 			redirect(controller:servicoService.getNomeDoController(servicoInstance.formaDePagamento),
-				action:"saveServiceWithValue", params:
+				action:"serviceWithValue", params:
 				[valor: servicoInstance.calculaValorTotal().toString().replace(".", ","), servicoId: servicoInstance.id])
         }
         else {

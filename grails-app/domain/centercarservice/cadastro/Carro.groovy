@@ -6,7 +6,7 @@ import centercarservice.financeiro.Servico;
 
 class Carro {
 	String placa, nome, motor, cor, tipoDeCombustivel
-	String ano = new Date().getYear().toString()
+	String ano
 	
 	static belongsTo = [cliente:Cliente]
 	
