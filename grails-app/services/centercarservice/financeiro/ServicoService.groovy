@@ -1,8 +1,8 @@
 package centercarservice.financeiro
 
-import centercarservice.estoque.Produto;
+import centercarservice.estoque.Produto
 
-class VendaService {
+class ServicoService {
 
     static transactional = true
 
@@ -10,8 +10,8 @@ class VendaService {
 
     }
 	
-	def void editaProdutosParaVendidos(Venda vendaInstance) {
-		for(Produto p : vendaInstance.produtos) {
+	def void editaProdutosParaVendidos(Servico servicoInstance) {
+		for(Produto p : servicoInstance.produtos) {
 			p.vendido = "sim"
 		}
 	}

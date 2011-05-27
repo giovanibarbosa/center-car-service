@@ -3,6 +3,8 @@ package centercarservice.financeiro
 class ServicoController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
+	def ServicoService servicoService
 
     def index = {
         redirect(action: "list", params: params)
@@ -23,7 +25,10 @@ class ServicoController {
         def servicoInstance = new Servico(params)
         if (servicoInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'servico.label', default: 'Servico'), servicoInstance.id])}"
-            redirect(action: "show", id: servicoInstance.id)
+			servicoService.editaProdutosParaVendidos(servicoInstance)
+			redirect(controller:servicoService.getNomeDoController(servicoInstance.formaDePagamento),
+				action:"saveServiceWithValue", params:
+				[valor: servicoInstance.calculaValorTotal().toString().replace(".", ","), servicoId: servicoInstance.id])
         }
         else {
             render(view: "create", model: [servicoInstance: servicoInstance])
