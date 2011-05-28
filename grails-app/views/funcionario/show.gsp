@@ -72,6 +72,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="funcionario.dataDeIngresso.label" default="Data De Ingresso" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${funcionarioInstance?.dataDeIngresso}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="funcionario.salarios.label" default="Salarios" /></td>
                             
                             <td valign="top" style="text-align: left;" class="value">

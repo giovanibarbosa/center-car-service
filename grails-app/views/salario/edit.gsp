@@ -42,6 +42,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="taxaDeComissao"><g:message code="salario.taxaDeComissao.label" default="Taxa De Comissao" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: salarioInstance, field: 'taxaDeComissao', 'errors')}">
+                                    <g:textField name="taxaDeComissao" value="${fieldValue(bean: salarioInstance, field: 'taxaDeComissao')}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="dataDeVencimento"><g:message code="salario.dataDeVencimento.label" default="Data De Vencimento" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: salarioInstance, field: 'dataDeVencimento', 'errors')}">
@@ -63,7 +72,7 @@
                                   <label for="pago"><g:message code="salario.pago.label" default="Pago" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: salarioInstance, field: 'pago', 'errors')}">
-                                    <g:checkBox name="pago" value="${salarioInstance?.pago}" />
+                                    <g:select name="pago" from="${salarioInstance.constraints.pago.inList}" value="${salarioInstance?.pago}" valueMessagePrefix="salario.pago"  />
                                 </td>
                             </tr>
                         

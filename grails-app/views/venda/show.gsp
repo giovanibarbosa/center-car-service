@@ -44,6 +44,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="venda.dataDaVenda.label" default="Data Da Venda" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${vendaInstance?.dataDaVenda}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="venda.tipoDePagamento.label" default="Tipo De Pagamento" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: vendaInstance, field: "tipoDePagamento")}</td>

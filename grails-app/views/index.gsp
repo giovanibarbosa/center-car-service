@@ -96,7 +96,7 @@
                     <p><a href="http://localhost:8080/CenterCarService/produto">Gerenciar Estoque de Produtos</a></p>
                     <p><a href="http://localhost:8080/CenterCarService/venda">Gerenciar Vendas</a></p>-->
                     <p><a href="http://localhost:8080/CenterCarService/estoque/index">Gerenciar Estoque</a></p>
-                    <p><a href="http://localhost:8080/CenterCarService/funcionario/listSalariosAPagar">Ver Salarios Atrasados</a></p>
+                    <p><a href="http://localhost:8080/CenterCarService/funcionario/listSalariosAPagar">Total em salarios a pagar</a></p>
                     
                 </ul>
             </div>
