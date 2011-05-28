@@ -26,13 +26,13 @@
                         
                             <g:sortableColumn property="valorBase" title="${message(code: 'salario.valorBase.label', default: 'Valor Base')}" />
                         
+                            <g:sortableColumn property="taxaDeComissao" title="${message(code: 'salario.taxaDeComissao.label', default: 'Taxa De Comissao')}" />
+                        
                             <g:sortableColumn property="dataDeVencimento" title="${message(code: 'salario.dataDeVencimento.label', default: 'Data De Vencimento')}" />
                         
                             <g:sortableColumn property="dataDePagamento" title="${message(code: 'salario.dataDePagamento.label', default: 'Data De Pagamento')}" />
                         
                             <g:sortableColumn property="pago" title="${message(code: 'salario.pago.label', default: 'Pago')}" />
-                        
-                            <th><g:message code="salario.funcionario.label" default="Funcionario" /></th>
                         
                         </tr>
                     </thead>
@@ -44,13 +44,13 @@
                         
                             <td>${fieldValue(bean: salarioInstance, field: "valorBase")}</td>
                         
+                            <td>${fieldValue(bean: salarioInstance, field: "taxaDeComissao")}</td>
+                        
                             <td><g:formatDate date="${salarioInstance.dataDeVencimento}" /></td>
                         
                             <td><g:formatDate date="${salarioInstance.dataDePagamento}" /></td>
                         
-                            <td><g:formatBoolean boolean="${salarioInstance.pago}" /></td>
-                        
-                            <td>${fieldValue(bean: salarioInstance, field: "funcionario")}</td>
+                            <td>${fieldValue(bean: salarioInstance, field: "pago")}</td>
                         
                         </tr>
                     </g:each>

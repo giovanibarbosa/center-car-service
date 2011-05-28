@@ -87,6 +87,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="dataDeIngresso"><g:message code="funcionario.dataDeIngresso.label" default="Data De Ingresso" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: funcionarioInstance, field: 'dataDeIngresso', 'errors')}">
+                                    <g:datePicker name="dataDeIngresso" precision="day" value="${funcionarioInstance?.dataDeIngresso}"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="salarios"><g:message code="funcionario.salarios.label" default="Salarios" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: funcionarioInstance, field: 'salarios', 'errors')}">
