@@ -1,6 +1,7 @@
 package centercarservice.cadastro
 
 import centercarservice.financeiro.Salario
+import centercarservice.cadastro.Funcionario
 
 class FuncionarioController {
 
