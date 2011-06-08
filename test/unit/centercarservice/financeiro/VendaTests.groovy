@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat
 class VendaTests extends GrailsUnitTestCase {
 
 
-    void testCalculaValorTotal() {
+    void testCreate() {
 		def formato = new SimpleDateFormat("dd/MM/yyyy")
 		def cliente = new Cliente(cpf: "00000000000", nome: "Jose da Silva", telefone: "33333333",
 			rg: "11111111", dataDeNascimento: formato.parse("25/01/1970"), 
@@ -19,6 +19,8 @@ class VendaTests extends GrailsUnitTestCase {
 		def venda = new Venda(cliente: cliente, funcionario: funcionario, 
 			tipoDePagamento: "Cartao de Credito", taxaDeDesconto: 0, dataDaVenda: formato.parse("08/06/2011"))
 		
-		assertEquals venda.calculaValorTotal()
+		assertEquals 0, venda.getTaxaDeDesconto()
+		assertEquals funcionario, venda.getFuncionario()
+		assertEquals "6532147", funcionario.getRg()
     }
 }
