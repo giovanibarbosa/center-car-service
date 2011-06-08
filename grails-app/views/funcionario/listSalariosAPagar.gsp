@@ -6,7 +6,7 @@
 <meta name="layout" content="main" />
 <g:set var="entityName"
 	value="${message(code: 'funcionario.label', default: 'Funcionario')}" />
-<title><g:message code="default.list.label" args="[entityName]" />
+<title>Salarios A Pagar
 </title>
 </head>
 <body>

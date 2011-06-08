@@ -5,15 +5,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'cheque.label', default: 'Cheque')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title>Cheques Cadastrados</title>
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}">Pagina Principal</a></span>
+            <span class="menuButton"><g:link class="create" action="create">Cadastrar Novo Cheque</g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <h1>Cheques Cadastrados</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -33,6 +33,14 @@
                             <th><g:message code="cheque.venda.label" default="Venda" /></th>
                         
                             <th><g:message code="cheque.servico.label" default="Servico" /></th>
+                            
+                            <th><g:message code="cheque.numeroDoCheque.label" default="Numero do Cheque" /></th>
+                            
+                            <th><g:message code="cheque.banco.label" default="Banco" /></th>
+                            
+                            <th><g:message code="cheque.dataDeDeposito.label" default="Data de Deposito" /></th>
+                            
+                            <th><g:message code="cheque.dataDeCompensacao.label" default="Data de Compensacao" /></th>
                         
                         </tr>
                     </thead>
@@ -51,6 +59,14 @@
                             <td>${fieldValue(bean: chequeInstance, field: "venda")}</td>
                         
                             <td>${fieldValue(bean: chequeInstance, field: "servico")}</td>
+                            
+                            <td>${fieldValue(bean: chequeInstance, field: "numeroDoCheque")}</td>
+                            
+                            <td>${fieldValue(bean: chequeInstance, field: "banco")}</td>
+                            
+                            <td><g:formatDate date="${chequeInstance.dataDeDeposito}" /></td>
+                            
+                            <td><g:formatDate date="${chequeInstance.dataDeCompensacao}" /></td>                            
                         
                         </tr>
                     </g:each>

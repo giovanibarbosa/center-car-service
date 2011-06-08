@@ -5,15 +5,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'venda.label', default: 'Venda')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title>Vendas Cadastradas</title>
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}">Pagina Inicial</a></span>
+            <span class="menuButton"><g:link class="create" action="create">Cadastrar Nova Venda</g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <h1>Vendas Cadastradas</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -27,6 +27,8 @@
                             <th><g:message code="venda.funcionario.label" default="Funcionario" /></th>
                         
                             <th><g:message code="venda.cliente.label" default="Cliente" /></th>
+                            
+                            <g:sortableColumn property="dataDaVenda" title="${message(code: 'servico.dataDaVenda.label', default: 'Data Da Venda')}" />
                         
                             <g:sortableColumn property="tipoDePagamento" title="${message(code: 'venda.tipoDePagamento.label', default: 'Tipo De Pagamento')}" />
                         
@@ -43,6 +45,8 @@
                             <td>${fieldValue(bean: vendaInstance, field: "funcionario")}</td>
                         
                             <td>${fieldValue(bean: vendaInstance, field: "cliente")}</td>
+                            
+                            <td><g:formatDate date="${vendaInstance.dataDaVenda}" /></td>
                         
                             <td>${fieldValue(bean: vendaInstance, field: "tipoDePagamento")}</td>
                         

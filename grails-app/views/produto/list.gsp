@@ -33,6 +33,12 @@
                             <g:sortableColumn property="precoDeCompra" title="${message(code: 'produto.precoDeCompra.label', default: 'Preco De Compra')}" />
                         
                             <g:sortableColumn property="dataDeVencimento" title="${message(code: 'produto.dataDeVencimento.label', default: 'Data De Vencimento')}" />
+                            
+                            <g:sortableColumn property="dataDePagamento" title="${message(code: 'produto.dataDePagamento.label', default: 'Data De Pagamento')}" />
+                            
+                            <g:sortableColumn property="vendido" title="${message(code: 'Vendido', default: 'Vendido')}" />
+                            
+                            <g:sortableColumn property="garantia" title="${message(code: 'Garantia', default: 'Garantia')}" />
                         
                         </tr>
                     </thead>
@@ -51,6 +57,12 @@
                             <td>${fieldValue(bean: produtoInstance, field: "precoDeCompra")}</td>
                         
                             <td><g:formatDate date="${produtoInstance.dataDeVencimento}" /></td>
+                            
+                            <td><g:formatDate date="${produtoInstance.dataDePagamento}" /></td>
+                            
+                            <td>${fieldValue(bean: produtoInstance, field: "vendido")}</td>
+                            
+                            <td><g:formatDate date="${produtoInstance.garantia}" /></td>
                         
                         </tr>
                     </g:each>

@@ -5,15 +5,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'funcionario.label', default: 'Funcionario')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title>Funcionarios Cadastrados</title>
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}">Pagina Principal</a></span>
+            <span class="menuButton"><g:link class="create" action="create">Cadastrar Novo Funcionario</g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <h1>Funcionarios Cadastrados</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -33,6 +33,10 @@
                             <g:sortableColumn property="dataDeNascimento" title="${message(code: 'funcionario.dataDeNascimento.label', default: 'Data De Nascimento')}" />
                         
                             <g:sortableColumn property="telefone" title="${message(code: 'funcionario.telefone.label', default: 'Telefone')}" />
+                            
+                            <g:sortableColumn property="endereco" title="${message(code: 'Endereco', default: 'Endereco')}" />
+                            
+                            <g:sortableColumn property="dataDeIngresso" title="${message(code: 'Data de Ingresso', default: 'Data de Ingresso')}" />
                         
                         </tr>
                     </thead>
@@ -51,6 +55,10 @@
                             <td><g:formatDate date="${funcionarioInstance.dataDeNascimento}" /></td>
                         
                             <td>${fieldValue(bean: funcionarioInstance, field: "telefone")}</td>
+                            
+                            <td>${fieldValue(bean: funcionarioInstance, field: "endereco")}</td>
+                            
+                            <td><g:formatDate date="${funcionarioInstance.dataDeIngresso}" /></td>
                         
                         </tr>
                     </g:each>
