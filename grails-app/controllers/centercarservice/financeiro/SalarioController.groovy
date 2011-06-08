@@ -1,5 +1,7 @@
 package centercarservice.financeiro
 
+import centercarservice.financeiro.Salario
+
 class SalarioController {
 
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]

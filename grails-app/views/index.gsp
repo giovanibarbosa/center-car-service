@@ -80,6 +80,7 @@
                         <li type="circle"><h1>Servicos</h1></li>
                         <li type="disc" align="center"><a href="http://localhost:8080/CenterCarService/servico/list">Listar Todos Efetuados</li>
                         <li type="disc" align="center"><a href="http://localhost:8080/CenterCarService/servico/create">Cadastrar</a></li>
+                        <li type="disc" align="center"><a href="http://localhost:8080/CenterCarService/servico/totalEmServicos">Total recebido em Servicos</a></li>
                     </ul>
                     <h1 align="center"><b>Gerenciamento de Estoque</b></h1>
                     <ul>

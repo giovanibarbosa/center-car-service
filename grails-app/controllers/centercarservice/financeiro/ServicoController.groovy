@@ -14,6 +14,11 @@ class ServicoController {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [servicoInstanceList: Servico.list(params), servicoInstanceTotal: Servico.count()]
     }
+	
+	def totalEmServicos = {
+		def BigDecimal result = servicoService.getTotalEmServicos()
+		[total : result]	
+	}
 
     def create = {
         def servicoInstance = new Servico()
