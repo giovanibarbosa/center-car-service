@@ -5,15 +5,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'cliente.label', default: 'Cliente')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title>Clientes Cadastrados</title>
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}">Pagina Principal</a></span>
+            <span class="menuButton"><g:link class="create" action="create">Cadastrar Novo Cliente</g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <h1>Clientes Cadastrados</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -33,6 +33,12 @@
                             <g:sortableColumn property="dataDeNascimento" title="${message(code: 'cliente.dataDeNascimento.label', default: 'Data De Nascimento')}" />
                         
                             <g:sortableColumn property="telefone" title="${message(code: 'cliente.telefone.label', default: 'Telefone')}" />
+                            
+                            <g:sortableColumn property="endereco" title="${message(code: 'cliente.endereco.label', default: 'Endereco')}" />
+                            
+                            <g:sortableColumn property="email" title="${message(code: 'e-mail', default: 'e-mail')}" />
+                            
+                            <g:sortableColumn property="observacoes" title="${message(code: 'Observacoes', default: 'Observacoes')}" />
                         
                         </tr>
                     </thead>
@@ -51,6 +57,12 @@
                             <td><g:formatDate date="${clienteInstance.dataDeNascimento}" /></td>
                         
                             <td>${fieldValue(bean: clienteInstance, field: "telefone")}</td>
+                            
+                            <td>${fieldValue(bean: clienteInstance, field: "endereco")}</td>
+                            
+                            <td>${fieldValue(bean: clienteInstance, field: "email")}</td>
+                            
+                            <td>${fieldValue(bean: clienteInstance, field: "observacoes")}</td>
                         
                         </tr>
                     </g:each>

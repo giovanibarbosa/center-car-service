@@ -5,12 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'salario.label', default: 'Salario')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title>Salrios dos Funcionarios</title>
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}">Pagina Inicial</a></span>
+            <span class="menuButton"><g:link class="create" action="create">Cadastrar Novo Salario</g:link></span>
         </div>
         <div class="body">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
@@ -23,6 +23,8 @@
                         <tr>
                         
                             <g:sortableColumn property="id" title="${message(code: 'salario.id.label', default: 'Id')}" />
+                            
+                            <g:sortableColumn property="Funcionario" title="${message(code: 'Funcionario', default: 'Funcionario')}" />
                         
                             <g:sortableColumn property="valorBase" title="${message(code: 'salario.valorBase.label', default: 'Valor Base')}" />
                         
@@ -41,6 +43,8 @@
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
                             <td><g:link action="show" id="${salarioInstance.id}">${fieldValue(bean: salarioInstance, field: "id")}</g:link></td>
+                            
+                            <td>${fieldValue(bean: salarioInstance, field: "funcionario")}</td>
                         
                             <td>${fieldValue(bean: salarioInstance, field: "valorBase")}</td>
                         

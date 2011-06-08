@@ -5,15 +5,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'servico.label', default: 'Servico')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title>Servicos Cadastrados</title>
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}">Pagina Inicial</a></span>
+            <span class="menuButton"><g:link class="create" action="create">Cadastrar Novo Servico</g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <h1>Servicos Cadastrados</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -33,6 +33,11 @@
                             <g:sortableColumn property="observacoes" title="${message(code: 'servico.observacoes.label', default: 'Observacoes')}" />
                         
                             <g:sortableColumn property="formaDePagamento" title="${message(code: 'servico.formaDePagamento.label', default: 'Forma De Pagamento')}" />
+                            
+                            <g:sortableColumn property="valorDaMaoDeObra" title="${message(code: 'servico.valorDaMaoDeObra.label', default: 'Valor da Mao de Obra')}" />
+                            
+                            <g:sortableColumn property="taxaDeDesconto" title="${message(code: 'servico.taxaDeDesconto.label', default: 'Taxa de Desconto')}" />      
+                            
                         
                         </tr>
                     </thead>
@@ -51,6 +56,10 @@
                             <td>${fieldValue(bean: servicoInstance, field: "observacoes")}</td>
                         
                             <td>${fieldValue(bean: servicoInstance, field: "formaDePagamento")}</td>
+                            
+                            <td>${fieldValue(bean: servicoInstance, field: "valorDaMaoDeObra")}</td>
+                            
+                            <td>${fieldValue(bean: servicoInstance, field: "taxaDeDesconto")}</td>
                         
                         </tr>
                     </g:each>
